@@ -7,11 +7,12 @@ use Illuminate\Support\Facades\Http;
 use App\Models\Movie;
 use App\Models\Category;
 
+
 class MovieSeeder extends Seeder
 {
     public function run(): void
     {
-        $apiKey = 'c9f48675a5ac97272fd7cb5f07f170ca';
+        $apiKey = 'config('services.tmdb.key')';
         
         $categoryAction = Category::firstOrCreate(
             ['name' => 'Action'],
