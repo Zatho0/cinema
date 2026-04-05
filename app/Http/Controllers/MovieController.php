@@ -10,9 +10,11 @@ class MovieController extends Controller
     public function index()
     {
         // On récupère TOUS les films de la table 'movies'
-        $movies = Movie::all();
+        $categories = \App\Models\Categories::with('movies')->get();
+    // On prend un film au hasard pour la bannière du haut
+        $heroMovie = \App\Models\Movie::inRandomOrder()->first();
 
         // On les envoie à la vue 'test-films'
-        return view('test-films', compact('movies'));
+        return view('test-films', compact('categories', 'heroMovie'));
     }
 }
