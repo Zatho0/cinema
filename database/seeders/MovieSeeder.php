@@ -24,14 +24,14 @@ class MovieSeeder extends Seeder
         );
         $category = [$categoryAction-> id, $categoryDrame->id];
 
-        // Boucle pour récupérer 5 pages de résultats (20 films par page)
+        
         for ($page = 1; $page <= 5; $page++) {
             
             $response = Http::get("https://api.themoviedb.org/3/discover/movie", [
                 'api_key'        => $apiKey,
-                'with_companies' => '420', // Marvel Studios
+                'with_companies' => '420', 
                 'language'       => 'fr-FR',
-                'page'           => $page, // On change de page à chaque tour
+                'page'           => $page, 
             ]);
 
             if ($response->successful()) {
@@ -39,7 +39,7 @@ class MovieSeeder extends Seeder
 
                 foreach ($moviesList as $data) {
                     $randomCategoryId = $category[array_rand($category)];
-                    // On cherche le réalisateur
+                   
                     $director = $this->getDirector($data['id'], $apiKey);
 
                     Movie::updateOrCreate(
@@ -56,7 +56,7 @@ class MovieSeeder extends Seeder
             }
             
            
-            usleep(200000); // 0.2 secondes
+            usleep(200000);
         }
     }
 

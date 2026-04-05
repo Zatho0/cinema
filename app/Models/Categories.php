@@ -9,9 +9,7 @@ class Categories extends Model
 {
     protected $fillable = ['name', 'slug'];
 
-    /**
-     * Une catégorie possède plusieurs films.
-     */
+    
     public function movies(): HasMany
     {
         return $this->hasMany(Movie::class);

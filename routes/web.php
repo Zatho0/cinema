@@ -11,14 +11,14 @@ use Illuminate\Support\Facades\Route;
 
 */
 
-// Si l'utilisateur tape l'URL racine, on l'envoie vers le login
+
 Route::get('/', function () {
     return redirect()->route('login');
 });
 
 /*
 
- Routes Protégées (Nécessitent d'être connecté)
+ Routes Protégées (Nécessite d'être connecté)
 
 */
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -48,7 +48,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 /*
 
- Authentification (Login, Register, etc.)
+ Authentification (Login, Register, etc...)
 
 */
 require __DIR__.'/auth.php';

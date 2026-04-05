@@ -19,7 +19,7 @@
     <div class="max-w-6xl mx-auto px-6 py-12">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
-            <!-- Colonne Gauche : Paramètres -->
+            
             <div class="space-y-8">
                 <section class="bg-white/5 p-8 rounded-sm border border-white/10">
                     <h2 class="text-xl font-black uppercase italic mb-6">Sécurité</h2>
@@ -48,7 +48,7 @@
                 </section>
             </div>
 
-            <!-- Colonne Droite : Ma Vidéothèque -->
+            
             <div class="lg:col-span-2">
                 <h2 class="text-3xl font-black uppercase italic mb-8 tracking-tighter">Mes Films Achetés</h2>
                 

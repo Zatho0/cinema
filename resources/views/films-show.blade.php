@@ -83,7 +83,7 @@
 
     <!-- BANNIÈRE INFOS -->
     <div class="relative w-full h-[70vh] md:h-[85vh] flex items-center">
-        <!-- Image de fond floutée ou sombre -->
+        <!-- Image de fond -->
         <div class="absolute inset-0">
             <img src="{{ $movie->poster }}" class="w-full h-full object-cover opacity-40 blur-sm" alt="">
             <div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/60 to-transparent"></div>

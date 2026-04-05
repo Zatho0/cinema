@@ -13,7 +13,7 @@ class CartController extends Controller
     {
         $cartItems = Cart::where('user_id', Auth::id())->with('movie')->get();
         
-        // Calcul du montant total via une petite formule simple
+        // Calcul du montant total 
         $total = $cartItems->sum(function($item) {
             return $item->movie->price * $item->quantity;
         });
@@ -24,7 +24,7 @@ class CartController extends Controller
     // Ajouter un film
     public function store(Request $request)
     {
-        // Grâce au fillable, ceci fonctionnera sans erreur :
+        
         Cart::firstOrCreate([
             'user_id'  => auth()->id(),
             'movie_id' => $request->movie_id

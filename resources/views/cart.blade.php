@@ -8,7 +8,7 @@
 </head>
 <body class="bg-[#141414] text-white font-sans antialiased">
 
-    <!-- Header simple -->
+   
     <nav class="p-6 flex justify-between items-center border-b border-white/10">
         <a href="{{ route('films.index') }}" class="text-red-600 text-2xl font-black uppercase italic tracking-tighter">Cinema</a>
         <a href="{{ route('films.index') }}" class="text-sm text-gray-400 hover:text-white transition">Continuer mes achats</a>
@@ -27,7 +27,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
-            <!-- Liste des films -->
+            
             <div class="lg:col-span-2 space-y-4">
                 @forelse($cartItems as $item)
                 <div class="flex items-center bg-white/5 p-4 rounded-sm border border-white/10 group transition hover:border-red-600/50">
@@ -57,7 +57,7 @@
                 @endforelse
             </div>
 
-            <!-- Résumé  -->
+            
             <div class="relative">
                 <div class="bg-white text-black p-8 rounded-sm sticky top-24">
                     <h2 class="text-2xl font-black uppercase italic mb-6">Total</h2>

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Movie extends Model
 {
-    // Indique les colonnes que Laravel a le droit de remplir
+    
     protected $fillable = [
         'name', 
         'description', 
@@ -16,7 +16,7 @@ class Movie extends Model
         'director'
     ];
 
-    // La relation pour récupérer la catégorie du film
+   
     public function category()
     {
         return $this->belongsTo(Category::class);

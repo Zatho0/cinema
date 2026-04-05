@@ -14,7 +14,7 @@ class ProfileController extends Controller
 {
     public function index() {
         $user = Auth::user();
-        // On récupère les achats avec les infos des films
+       
         $purchasedMovies = Purchase::where('user_id', $user->id)->with('movie')->get();
         
         return view('profile.index', compact('user', 'purchasedMovies'));

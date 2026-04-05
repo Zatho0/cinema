@@ -137,18 +137,18 @@
                 @foreach($category->movies as $movie)
                 <div class="movie-card flex-none w-36 sm:w-44 md:w-52 group relative">
                     
-                    <!-- L'image est enveloppée dans le lien -->
+                   
                     <div class="relative aspect-[2/3] rounded-md overflow-hidden bg-gray-900 shadow-lg border border-white/5">
                         <a href="{{ route('films.show', $movie->id) }}" class="block w-full h-full">
                             <img src="{{ $movie->poster }}" class="w-full h-full object-cover transition-all duration-500 md:group-hover:opacity-30" alt="{{ $movie->name }}">
                         </a>
 
-                        <!-- Badge Prix (pointer-events-none pour ne pas gêner le clic sur l'image) -->
+                        <!-- Badge Prix  -->
                         <div class="absolute top-2 right-2 bg-black/80 backdrop-blur-md px-2 py-1 rounded text-[10px] md:text-xs font-bold text-green-400 z-20 pointer-events-none">
                             {{ number_format($movie->price, 2) }} €
                         </div>
 
-                        <!-- Hover Desktop : Bouton Panier (Z-index plus élevé pour être cliquable) -->
+                        <!-- Hover Desktop : Bouton Panier  -->
                         <div class="hidden md:flex absolute inset-0 flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 p-4 pointer-events-none">
                             <form action="{{ route('cart.add') }}" method="POST" class="w-full pointer-events-auto">
                                 @csrf
