@@ -23,3 +23,5 @@ require __DIR__.'/auth.php';
 // Route pour afficher les films
 Route::get('/films', [App\Http\Controllers\MovieController::class, 'index'])-> name('films.index');
 Route::get('/categories/{slug}', [MovieController::class, 'category'])->name('films.categories');
+Route::get('/movie/{id}', [MovieController::class, 'show'])->name('films.show');
+Route::get('/director/{name}', [MovieController::class, 'director'])->name('films.director');

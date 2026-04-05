@@ -58,4 +58,28 @@ class MovieController extends Controller
 
     return view('test-films', compact('categories', 'heroMovie'));
 }
+
+    public function show($id)
+    {
+        $movie = \App\Models\Movie::findOrFail($id);
+        
+        // On récupère quelques films similaires (même catégorie) pour le bas de page
+        $similarMovies = \App\Models\Movie::where('categories_id', $movie->category_id)
+                            ->where('id', '!=', $movie->id)
+                            ->take(6)
+                            ->get();
+
+        return view('films-show', compact('movie', 'similarMovies'));
+    }
+
+    public function director($name)
+    {
+        $movies = \App\Models\Movie::where('director', $name)->get();
+        $categories = collect([
+            (object) ['name' => "Films réalisés par " . $name, 'movies' => $movies]
+        ]);
+        
+        $heroMovie = $movies->first();
+        return view('test-films', compact('categories', 'heroMovie'));
+    }
 }
