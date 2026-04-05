@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MovieController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,3 +22,4 @@ require __DIR__.'/auth.php';
 
 // Route pour afficher les films
 Route::get('/films', [App\Http\Controllers\MovieController::class, 'index'])-> name('films.index');
+Route::get('/categories/{slug}', [MovieController::class, 'category'])->name('films.categories');
