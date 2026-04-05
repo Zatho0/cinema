@@ -8,11 +8,11 @@ class Movie extends Model
 {
     // Indique les colonnes que Laravel a le droit de remplir
     protected $fillable = [
-        'title', 
+        'name', 
         'description', 
-        'image', 
+        'poster', 
         'price', 
-        'category_id', 
+        'categories_id', 
         'director'
     ];
 

@@ -12,7 +12,7 @@ class MovieSeeder extends Seeder
 {
     public function run(): void
     {
-        $apiKey = 'config('services.tmdb.key')';
+        $apiKey = config('services.tmdb.key');
         
         $categoryAction = Category::firstOrCreate(
             ['name' => 'Action'],
