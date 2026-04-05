@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\CartController;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -34,4 +35,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/panier/ajouter', [CartController::class, 'store'])->name('cart.add');
     Route::delete('/panier/supprimer/{id}', [CartController::class, 'destroy'])->name('cart.remove');
     Route::post('/panier/vider', [CartController::class, 'clear'])->name('cart.clear');
+});
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profil', [ProfileController::class, 'index'])->name('profile.index');
+    Route::post('/profil/password', [ProfileController::class, 'updatePassword'])->name('profile.password');
 });

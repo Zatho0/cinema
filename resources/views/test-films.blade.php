@@ -90,7 +90,7 @@
                             <p class="text-sm font-bold truncate">{{ Auth::user()->name }}</p>
                         </div>
 
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition">Compte</a>
+                        <a href="{{ route('profile.index') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition">Compte</a>
                         <a href="{{ route('cart.index') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition">Mon Panier</a>
                         
                         <div class="border-t border-white/5 mt-2">

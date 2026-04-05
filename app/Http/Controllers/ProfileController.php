@@ -8,9 +8,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Purchase;
 
 class ProfileController extends Controller
 {
+    public function index() {
+        $user = Auth::user();
+        // On récupère les achats avec les infos des films
+        $purchasedMovies = Purchase::where('user_id', $user->id)->with('movie')->get();
+        
+        return view('profile.index', compact('user', 'purchasedMovies'));
+    }
     /**
      * Display the user's profile form.
      */
