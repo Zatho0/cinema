@@ -74,15 +74,15 @@ cd cinema
 composer run setup
 
 ```
-### 🔑 Configuration API
-# Ajoutez votre clé TMDB dans le fichier .env pour activer l'importation automatique des films :
+## 🔑 Configuration API
+Ajoutez votre clé TMDB dans le fichier .env pour activer l'importation automatique des films :
 
 ```bash
 TMDB_API_KEY=votre_cle_api_ici
 
 ```
-### 🎲 Ajout des données 
-# Pour générer l'utilisateur de test et importer les films réels via l'API :
+## 🎲 Ajout des données 
+Pour générer l'utilisateur de test et importer les films réels via l'API :
 
 ````Bash
 # Créer l'utilisateur test (test@example.com) et les catégories
@@ -91,8 +91,8 @@ php artisan db:seed
 # Importer les films Marvel depuis l'API TMDB
 php artisan db:seed --class=MovieSeeder
 ````
-### 💻 Lancement du serveur
-# Pour démarrer simultanément le serveur PHP et la compilation des assets (Vite) :
+## 💻 Lancement du serveur
+Pour démarrer simultanément le serveur PHP et la compilation des assets (Vite) :
 
 ````Bash
 composer run dev
