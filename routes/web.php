@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\CartController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,3 +26,12 @@ Route::get('/films', [App\Http\Controllers\MovieController::class, 'index'])-> n
 Route::get('/categories/{slug}', [MovieController::class, 'category'])->name('films.categories');
 Route::get('/movie/{id}', [MovieController::class, 'show'])->name('films.show');
 Route::get('/director/{name}', [MovieController::class, 'director'])->name('films.director');
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/panier', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/panier/ajouter', [CartController::class, 'store'])->name('cart.add');
+    Route::delete('/panier/supprimer/{id}', [CartController::class, 'destroy'])->name('cart.remove');
+    Route::post('/panier/vider', [CartController::class, 'clear'])->name('cart.clear');
+});
